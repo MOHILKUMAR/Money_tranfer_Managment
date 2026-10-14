@@ -1,0 +1,13 @@
+node_modules/
+out/
+release/
+test-results/
+playwright-report/
+*.log
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.cmmbak
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

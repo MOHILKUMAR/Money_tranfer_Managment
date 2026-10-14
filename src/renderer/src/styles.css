@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', Menlo, monospace;
+
+  --color-charcoal: #2a2a2a;
+  --color-charcoal-800: #333333;
+  --color-charcoal-700: #3d3d3d;
+  --color-charcoal-600: #4a4a4a;
+  --color-silver: #c0c0c0;
+  --color-silver-300: #d6d6d6;
+  --color-silver-200: #e4e4e4;
+  --color-silver-100: #efefef;
+  --color-racing: #e10600;
+  --color-racing-600: #c40500;
+  --color-racing-50: #fff1f0;
+  --color-surface: #ffffff;
+  --color-canvas: #f4f4f5;
+  --color-ink: #1c1c1c;
+  --color-ink-muted: #5e5e5e;
+  --color-ink-faint: #8a8a8a;
+  --color-credit: #0f7a36;
+  --color-credit-50: #ecf8f0;
+  --color-due: #b42318;
+  --color-due-50: #fef1f0;
+  --color-warning: #8a5a00;
+  --color-warning-50: #fff8e6;
+
+  /* Chart categorical palette (validated: adjacent CVD ΔE ≥ 9, normal ΔE ≥ 19) */
+  --color-series-1: #2a78d6;
+  --color-series-2: #eb6834;
+  --color-series-3: #1baf7a;
+  --color-series-4: #eda100;
+  --color-series-5: #e87ba4;
+  --color-series-6: #008300;
+  --color-series-7: #4a3aa7;
+  --color-series-8: #e34948;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-family: var(--font-sans);
+    font-size: 14px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-racing);
+    outline-offset: 2px;
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-silver);
+  border-radius: 999px;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 11px;
+  fill: var(--color-ink-muted);
+}
+.recharts-legend-item-text {
+  color: var(--color-ink) !important;
+  font-size: 12px;
+}
+
+@media print {
+  aside,
+  header,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    overflow: visible !important;
+  }
+}
